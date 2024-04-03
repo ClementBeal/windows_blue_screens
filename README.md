@@ -9,6 +9,11 @@ Thanks to `windows_blue_screens`, you can now give the Windows experience to you
 | ![Windows 2000](assets/w2000.webp)          | ![Windows 10](assets/w10.webp) |
 
 
+## How to install
+
+```bash
+flutter pub add windows_blue_screens
+```
 
 ## Usage
 
