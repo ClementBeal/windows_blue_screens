@@ -53,6 +53,6 @@ String _getDeviceString(ThemeData theme) {
     TargetPlatform.windows ||
     TargetPlatform.macOS ||
     TargetPlatform.linux =>
-      'computer'
+      'PC'
   };
 }
