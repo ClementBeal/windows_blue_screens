@@ -6,17 +6,17 @@ class Windows8Screen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Color.fromARGB(255, 24, 114, 169),
+    return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 24, 114, 169),
       body: Padding(
-        padding: EdgeInsets.all(64.0),
+        padding: const EdgeInsets.all(64.0),
         child: Center(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 ":(",
                 style: TextStyle(
                   color: Colors.white,
@@ -24,13 +24,13 @@ class Windows8Screen extends StatelessWidget {
                 ),
               ),
               Text(
-                "Your phone run into a problem that it couldn't handle, and now it needs to restart.",
-                style: TextStyle(
+                "Your ${_getDeviceString(Theme.of(context))} run into a problem that it couldn't handle, and now it needs to restart.",
+                style: const TextStyle(
                   color: Colors.white,
                   fontSize: 24,
                 ),
               ),
-              Text(
+              const Text(
                 "You can search the error online: HAL_INITIALIZATION_FAILED",
                 style: TextStyle(
                   color: Colors.white,
@@ -42,4 +42,17 @@ class Windows8Screen extends StatelessWidget {
       ),
     );
   }
+}
+
+String _getDeviceString(ThemeData theme) {
+  return switch (theme.platform) {
+    TargetPlatform.android ||
+    TargetPlatform.iOS ||
+    TargetPlatform.fuchsia =>
+      'phone',
+    TargetPlatform.windows ||
+    TargetPlatform.macOS ||
+    TargetPlatform.linux =>
+      'computer'
+  };
 }
